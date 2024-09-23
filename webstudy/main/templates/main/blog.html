@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blog List</title>
+    <style>
+        table,td,th{border: 1px solid black}
+    </style>
+</head>
+<body>
+    <h1>게시판 페이지 입니다.</h1>
+    <table>
+        <th>글번호</th>
+        <th>제목</th>
+        <th>내용</th>
+        {% for post in postlist %}
+        <ul>
+            <tr>
+            <td>{{post.id}}</a></td>
+            <td><a href="{{post.pk}}">{{post.postname}}</a></td>
+            <td>{{post.contents}}</a></td>
+            <td><a href="/blog/{{post.pk}}/remove">삭제</a></td>
+            </tr>
+        </ul>
+        {% endfor %}
+    </table>
+    <button><a href="new_post/">글쓰기</a></button>
+</body>
+</html>
